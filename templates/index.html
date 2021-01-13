@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+img {
+  border: 5px solid #555;
+}
 <head>
    <meta charset="UTF-8">
    <title>Make Your Sketch</title>
@@ -46,7 +49,8 @@
    {% if data %}
    <div class="container">
       <img src="{{ data.uploaded_img }}" alt="" width="40%" height="40%">
-      <img src="{{ data.processed_img }}" alt="" width="40%" height="40%">   
+      <img src="{{ data.processed_img }}" alt="" width="40%" height="40%">  
+      <h1>====</h1>
    </div>
    {% endif %}
 
