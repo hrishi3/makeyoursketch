@@ -9,6 +9,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border: 8px solid #008000;
 }
 </style>
    <title>Make Your Sketch</title>
@@ -49,14 +50,14 @@ img {
          <input type=submit value=Upload class="btn btn-primary">
       </form>
       <br><br>
-      <img id="output" alt="" width="40%" height="40%" />
+      <img id="output" alt="" width="60%" height="60%" />
    </div>
 
    {% if data %}
    <div class="container">
       
      <a href="{{ data.processed_img }}" download>
-      <img src="{{ data.processed_img }}" alt="" width="40%" height="40%">  
+      <img src="{{ data.processed_img }}" alt="" width="60%" height="60%">  
       </a>
    </div>
    {% endif %}
