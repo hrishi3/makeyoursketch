@@ -48,7 +48,7 @@ img {
    <div class="container">
       <form method=post enctype=multipart/form-data>
          <input type=file name=file onchange="loadFile(event)">
-         <input type=submit value=Upload class="btn btn-primary">
+         <input type=submit value="Sketch It" class="btn btn-primary">
       </form>
       <br><br>
       <img id="output" alt="" width="60%" height="60%" />
@@ -56,7 +56,7 @@ img {
 
    {% if data %}
    <div class="container">
-      
+      <h2>Click image to download</h2>
      <a href="{{ data.processed_img }}" download>
       <img src="{{ data.processed_img }}" alt="" width="60%" height="60%">  
       </a>
