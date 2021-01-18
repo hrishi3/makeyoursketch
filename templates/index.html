@@ -48,15 +48,16 @@ img {
          <input type=file name=file onchange="loadFile(event)">
          <input type=submit value=Upload class="btn btn-primary">
       </form>
+      <br><br>
       <img id="output" alt="" width="40%" height="40%" />
    </div>
 
    {% if data %}
    <div class="container">
       
-     
+     <a href="{{ data.processed_img }}" download>
       <img src="{{ data.processed_img }}" alt="" width="40%" height="40%">  
-      
+      </a>
    </div>
    {% endif %}
 
