@@ -55,8 +55,13 @@ def detect_object(path, filename):
     blurred = cv2.GaussianBlur(inverted_image, (21, 21), 0)
     inverted_blurred = 255 - blurred
     pencil_sketch = cv2.divide(gray_image, inverted_blurred, scale=256.0)
-
+    pencil_sketch1 = cv2.divide(gray_image, inverted_blurred, scale=245.0)
+    pencil_sketch2 = cv2.divide(gray_image, inverted_blurred, scale=235.0)
+    filename1=filename +"1"
+    filename2=filename +"2"
     cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename}",pencil_sketch)
+    cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename1}",pencil_sketch1)
+    cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename2}",pencil_sketch2)
   
 # download 
 # @app.route('/uploads/<filename>')
