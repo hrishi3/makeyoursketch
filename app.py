@@ -37,6 +37,8 @@ def index():
             process_file(os.path.join(UPLOAD_FOLDER, filename), filename)
             data={
                 "processed_img":'static/downloads/'+filename,
+                "processed_img1":'static/downloads/'+filename1,
+                "processed_img2":'static/downloads/'+filename2,
                 "uploaded_img":'static/uploads/'+filename
             }
             return render_template("index.html",data=data)  
