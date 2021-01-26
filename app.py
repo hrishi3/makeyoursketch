@@ -37,8 +37,7 @@ def index():
             process_file(os.path.join(UPLOAD_FOLDER, filename), filename)
             data={
                 "processed_img":'static/downloads/'+filename,
-                "processed_img1":'static/downloads/'+filename1,
-                "processed_img2":'static/downloads/'+filename2,
+               
                 "uploaded_img":'static/uploads/'+filename
             }
             return render_template("index.html",data=data)  
@@ -62,9 +61,7 @@ def detect_object(path, filename):
     filename1=filename +"1"
     filename2=filename +"2"
     cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename}",pencil_sketch)
-    cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename1}",pencil_sketch1)
-    cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename2}",pencil_sketch2)
-  
+    
 # download 
 # @app.route('/uploads/<filename>')
 # def uploaded_file(filename):
