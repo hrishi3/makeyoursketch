@@ -32,7 +32,7 @@ def index():
             flash('No file selected')
             return redirect(request.url)
         if file and allowed_file(file.filename):
-            scale1 = request.form["scale"]
+            scale1 = int(request.form["scale"])
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             process_file(os.path.join(UPLOAD_FOLDER, filename), filename,scale1)
