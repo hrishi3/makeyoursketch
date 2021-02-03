@@ -32,10 +32,10 @@ def index():
             flash('No file selected')
             return redirect(request.url)
         if file and allowed_file(file.filename):
-            scale = request.form["scale"]
+            scale1 = request.form["scale"]
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
-            process_file(os.path.join(UPLOAD_FOLDER, filename), filename,scale)
+            process_file(os.path.join(UPLOAD_FOLDER, filename), filename,scale1)
             data={
                 "processed_img":'static/downloads/'+filename,
                
@@ -45,18 +45,18 @@ def index():
     return render_template('index.html')
 
 
-def process_file(path, filename,scale):
-    detect_object(path, filename,scale)
+def process_file(path, filename,scale1):
+    detect_object(path, filename,scale1)
     
 
-def detect_object(path, filename,scale):    
+def detect_object(path, filename,scale1):    
     
     image = cv2.imread(path)
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     inverted_image = 255 - gray_image
     blurred = cv2.GaussianBlur(inverted_image, (21, 21), 0)
     inverted_blurred = 255 - blurred
-    pencil_sketch = cv2.divide(gray_image, inverted_blurred, scale=scale)
+    pencil_sketch = cv2.divide(gray_image, inverted_blurred, scale=scale1)
     
     cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename}",pencil_sketch)
     
