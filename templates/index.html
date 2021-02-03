@@ -48,7 +48,14 @@ img {
    <div class="container">
       <form method=post enctype=multipart/form-data>
          <input type=file name=file onchange="loadFile(event)">
-         <input type=submit value="Sketch It" class="btn btn-primary">
+<br><br>
+<p> <h4>Choose scale</h4> (You can check what scale suits better for your sketch,kindly try multiple.Bright image-Low scale, Dark Image-High scale)<br>
+</p>
+  <input type="range" value="256" min="230" max="270" name="scale" oninput="this.nextElementSibling.value = this.value">
+<output>256</output>
+<input type="submit" value="submit" />
+<br><br>
+         <input type=submit value=Upload class="btn btn-primary">
       </form>
       <br><br>
       <img id="output" alt="" width="60%" height="60%" />
