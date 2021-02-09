@@ -6,7 +6,7 @@ import numpy as np
 
 UPLOAD_FOLDER ='static/uploads/'
 DOWNLOAD_FOLDER = 'static/downloads/'
-ALLOWED_EXTENSIONS = {'jpg', 'png','.jpeg'}
+ALLOWED_EXTENSIONS = {'jpg', 'png','jpeg'}
 app = Flask(__name__, static_url_path="/static")
 
 
